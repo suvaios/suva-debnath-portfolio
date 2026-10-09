@@ -100,6 +100,69 @@
       .hero h1 { font-size: clamp(3.1rem, 16vw, 5rem); }
     }
   </style>
+  <style>
+    /* Keep the complete introduction visible in the first laptop viewport. */
+    .hero {
+      height: min(650px, calc(100svh - 118px));
+      min-height: 540px;
+      margin-top: 24px;
+      margin-bottom: 34px;
+    }
+    .hero > div:first-child {
+      align-self: center;
+      padding: clamp(28px, 5vw, 62px);
+    }
+    .hero h1 {
+      font-size: clamp(3.1rem, 7vw, 5.8rem);
+      margin: 16px 0 20px;
+    }
+    .hero .lead { font-size: 1.05rem; line-height: 1.55; }
+    .hero .hero-actions { margin-top: 24px; }
+    .hero .portrait { min-height: 540px; object-position: 72% 22%; }
+
+    @media (max-width: 900px) {
+      .nav .shell { height: 58px; }
+      .hero {
+        height: calc(100svh - 86px);
+        min-height: 520px;
+        max-height: 650px;
+        margin-top: 14px;
+        margin-bottom: 24px;
+        padding: 0;
+      }
+      .hero > div:first-child {
+        align-self: center;
+        max-width: 660px;
+        padding: 26px 24px;
+      }
+      .hero h1 {
+        font-size: clamp(2.75rem, 11vw, 4.6rem);
+        line-height: .93;
+        margin: 13px 0 17px;
+      }
+      .hero .lead {
+        font-size: .98rem;
+        line-height: 1.48;
+        max-width: 560px;
+      }
+      .hero .portrait { min-height: 520px; object-position: 68% 18%; }
+      .hero .portrait-wrap::before {
+        background: linear-gradient(90deg, rgba(5,10,21,.97) 0%, rgba(5,10,21,.84) 58%, rgba(5,10,21,.3) 100%), linear-gradient(0deg, rgba(5,10,21,.7), transparent 60%);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero { min-height: 560px; height: calc(100svh - 78px); }
+      .hero > div:first-child { align-self: center; }
+      .hero .eyebrow { font-size: .68rem; letter-spacing: .1em; }
+      .hero h1 { font-size: clamp(2.55rem, 13vw, 3.8rem); }
+      .hero .lead { font-size: .93rem; }
+      .hero .portrait { min-height: 560px; object-position: 62% center; }
+      .hero .portrait-wrap::before {
+        background: linear-gradient(0deg, rgba(5,10,21,.98) 0%, rgba(5,10,21,.9) 58%, rgba(5,10,21,.38) 100%);
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="nav"><div class="shell"><a class="brand" href="#top">SUVA<span>.</span></a><div class="links"><a href="#expertise">Expertise</a><a href="#experience">Experience</a><a href="#work">Work</a><a class="cta" href="mailto:suva.mech@gmail.com">Contact</a></div></div></nav>
